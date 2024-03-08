@@ -6,44 +6,44 @@ import type { Knex } from "knex";
 
 const config: Record<'development' | 'staging' | 'production', Knex.Config> = {
   development: {
-    client: "pg",
-    connection: process.env.DATABASE_URL,
+    client: 'pg',
+    connection: process.env.POSTGRES_PRISMA_URL,
     migrations: {
-        extension: 'ts',
-      }
+      extension: 'ts'
+    }
   },
 
   staging: {
-    client: "postgresql",
+    client: 'postgresql',
     connection: {
-      database: "my_db",
-      user: "username",
-      password: "password"
+      database: 'my_db',
+      user: 'username',
+      password: 'password'
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: "knex_migrations"
+      tableName: 'knex_migrations'
     }
   },
 
   production: {
-    client: "postgresql",
+    client: 'postgresql',
     connection: {
-      database: "my_db",
-      user: "username",
-      password: "password"
+      database: 'my_db',
+      user: 'username',
+      password: 'password'
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: "knex_migrations"
+      tableName: 'knex_migrations'
     }
   }
-};
+}
 
 module.exports = config.development;

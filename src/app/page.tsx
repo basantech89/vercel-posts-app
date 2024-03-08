@@ -26,7 +26,6 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {/* <button onClick={generatePosts}>Generate Post</button> */}
       <Button onClick={generatePosts} />
       {posts.map(post => (
         <div key={post.id}>{post.content}</div>
