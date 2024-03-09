@@ -7,7 +7,7 @@ import type { Knex } from "knex";
 const config: Record<'development' | 'staging' | 'production', Knex.Config> = {
   development: {
     client: 'pg',
-    connection: process.env.POSTGRES_PRISMA_URL,
+    connection: process.env.POSTGRES_URL,
     migrations: {
       extension: 'ts'
     }
